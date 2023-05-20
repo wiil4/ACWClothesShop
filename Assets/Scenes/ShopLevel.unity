@@ -7631,7 +7631,8 @@ MonoBehaviour:
   _playerItemsUI: {fileID: 426011418}
   _shopItemsUI: {fileID: 1240045757}
   _coinsHandlerUI: {fileID: 507663086}
-  _maxCoins: 100000
+  _maxCoins: 500
+  _maxPlayerItems: 15
 --- !u!1 &2087716544
 GameObject:
   m_ObjectHideFlags: 0

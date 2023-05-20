@@ -106,7 +106,11 @@ public class ShopUI : MonoBehaviour
     }
     private void PurchaseItem(Item itemData)
     {
-        _playerItemsData.AddItem(itemData);
-        GameManager.instance.PurchaseItem(itemData.Price);
+        if(GameManager.instance.CheckCanBuyItems(itemData.Price))
+        {
+            _playerItemsData.AddItem(itemData);
+            GameManager.instance.PurchaseItem(itemData.Price);
+        }
+        
     }
 }

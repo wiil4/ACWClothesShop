@@ -15,6 +15,7 @@ public class PlayerItemsUI : MonoBehaviour
 
     [SerializeField] ItemData _playerItemsData;
 
+
     void Start()
     {
         FillGrid();
@@ -29,8 +30,10 @@ public class PlayerItemsUI : MonoBehaviour
     public void FillGrid()
     {
         if(_playerItemsData.CountItems()<=0)
-        {
+        {            
+            ClearGrid();
             _playerItemsGroup.gameObject.SetActive(false);
+            _emptyList.SetActive(true);
             return;
         }
 
@@ -64,5 +67,10 @@ public class PlayerItemsUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         GameManager.instance.CanPlay = true;
+    }
+
+    public int CountPlayerItems()
+    {
+        return _playerItemsData.CountItems();
     }
 }
