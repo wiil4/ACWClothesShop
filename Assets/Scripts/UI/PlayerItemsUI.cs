@@ -15,7 +15,6 @@ public class PlayerItemsUI : MonoBehaviour
 
     [SerializeField] ItemData _playerItemsData;
 
-
     void Start()
     {
         FillGrid();

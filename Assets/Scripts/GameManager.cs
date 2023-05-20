@@ -7,9 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public bool CanPlay { get; set; }
 
-    [Header("GUIReferences")]
+    [Header("GUI References")]
     [SerializeField] PlayerItemsUI _playerItemsUI;
     [SerializeField] ShopUI _shopItemsUI;
+    [SerializeField] CoinsHandlerUI _coinsHandlerUI;
+
+    [Header("Coins")]
+    [SerializeField] int _maxCoins = 100000;
+    int _currentCoins;
 
 
     private void Awake()
@@ -23,6 +28,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         CanPlay = true;
+        _currentCoins = _maxCoins;
         HidePanels();
     }
 
@@ -45,5 +51,18 @@ public class GameManager : MonoBehaviour
             _playerItemsUI.gameObject.SetActive(!CanPlay);
             _playerItemsUI.FillGrid();
         }
+    }
+
+    public void PurchaseItem(int price)
+    {
+        _currentCoins -= price;
+        Mathf.Clamp(_currentCoins, 0, _maxCoins);
+        _coinsHandlerUI.SetCurrentCoins(_currentCoins);
+    }
+    public void SellItem(int price)
+    {
+        _currentCoins += price;
+        Mathf.Clamp(_currentCoins, 0, _maxCoins);
+        _coinsHandlerUI.SetCurrentCoins(_currentCoins);
     }
 }

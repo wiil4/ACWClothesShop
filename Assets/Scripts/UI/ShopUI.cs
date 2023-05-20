@@ -101,10 +101,12 @@ public class ShopUI : MonoBehaviour
     private void SellItem(Item itemData)
     {
         _playerItemsData.RemoveItem(itemData);
+        GameManager.instance.SellItem(itemData.Price);
         GenerateListOfItems(_playerItemsData, _sellItemsContent);
     }
     private void PurchaseItem(Item itemData)
     {
         _playerItemsData.AddItem(itemData);
+        GameManager.instance.PurchaseItem(itemData.Price);
     }
 }
