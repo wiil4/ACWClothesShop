@@ -8,7 +8,7 @@ public class ShopInteraction : MonoBehaviour
     bool _playerDetected;
 
     [Header("Character Shop Panel")]
-    [SerializeField] GameObject _shopPanel;
+    [SerializeField] ShopUI _shopPanel;
     
     void Start()
     {
@@ -28,7 +28,8 @@ public class ShopInteraction : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            _shopPanel.SetActive(true);
+            _shopPanel.gameObject.SetActive(true);
+            _shopPanel.ShowPurchaseItemsList();
             GameManager.instance.CanPlay = false;
         }
     }

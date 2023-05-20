@@ -7,9 +7,6 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
-    [Header("Main Shop Panel")]
-    [SerializeField] GameObject _shopUI;
-
     [Header("Shop Items Parameters")]
     [SerializeField] float _spaceBetweenItems = 2f;
     [SerializeField] GameObject _shopItemPrefab;    
@@ -32,9 +29,9 @@ public class ShopUI : MonoBehaviour
     [SerializeField] Transform _sellItemsContent;
 
     void Start()
-    {     
-        GenerateListOfItems(_shopItemsData, _purchaseItemsContent);
+    {             
         SetClickEvents();
+        ShowPurchaseItemsList();
     }
 
     private void GenerateListOfItems(ItemData itemsData, Transform itemsContentTransform)
@@ -82,9 +79,10 @@ public class ShopUI : MonoBehaviour
         _sellListButton.onClick.AddListener(ShowSellItemsList);
     }
 
-    private void ShowPurchaseItemsList()
+    public void ShowPurchaseItemsList()
     {
         _purchaseItemsList.SetActive(true);
+        GenerateListOfItems(_shopItemsData, _purchaseItemsContent);
         _sellItemsList.SetActive(false);
     }
     private void ShowSellItemsList()
@@ -96,7 +94,7 @@ public class ShopUI : MonoBehaviour
 
     private void CloseShopPanel()
     {
-        _shopUI.SetActive(false);
+        gameObject.SetActive(false);
         GameManager.instance.CanPlay = true;
     }
 

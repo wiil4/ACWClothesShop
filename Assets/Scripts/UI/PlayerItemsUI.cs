@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class PlayerItemsUI : MonoBehaviour
 {
+    [Header("Main PlayerItemsUI")]
+    [SerializeField] Button _closeButton;
+
     [Header("Player Grid Parameters")]
     [SerializeField] GridLayoutGroup _playerItemsGroup;
     [SerializeField] GameObject _playerItemPrefab;
@@ -16,14 +19,15 @@ public class PlayerItemsUI : MonoBehaviour
     void Start()
     {
         FillGrid();
+        SetClickEvents();
     }
 
-    void Update()
+    private void SetClickEvents()
     {
-        
+        _closeButton.onClick.AddListener(CloseItemsPanel);
     }
 
-    private void FillGrid()
+    public void FillGrid()
     {
         if(_playerItemsData.CountItems()<=0)
         {
@@ -32,15 +36,16 @@ public class PlayerItemsUI : MonoBehaviour
         }
 
         _emptyList.SetActive(false);
+        _playerItemsGroup.gameObject.SetActive(true);
         ClearGrid();
         for(int i = 0; i < _playerItemsData.CountItems(); i++)
         {
-            Item playerItem = _playerItemsData.GetItem(i);
+            Item newItem = _playerItemsData.GetItem(i);
+            PlayerClothesItemUI playerItem = Instantiate(_playerItemPrefab, _playerItemsGroup.transform).GetComponent<PlayerClothesItemUI>();
 
+            playerItem.SetItemImage(newItem.Image);
+            playerItem.ChangeItem(newItem, ChangeItem);
         }
-        
-
-
     }
 
     private void ClearGrid()
@@ -49,5 +54,16 @@ public class PlayerItemsUI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+    }
+
+    private void ChangeItem(Item item)
+    {
+        Debug.Log("setPlayerItem" + item.Image.name);
+    }
+
+    private void CloseItemsPanel()
+    {
+        gameObject.SetActive(false);
+        GameManager.instance.CanPlay = true;
     }
 }
