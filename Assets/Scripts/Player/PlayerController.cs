@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.CanPlay)
+            return;
         _inputs.x = Input.GetAxisRaw("Horizontal");
         _inputs.y = Input.GetAxisRaw("Vertical");        
         _animator.SetFloat("Horizontal", _inputs.x);

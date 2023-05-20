@@ -29,7 +29,7 @@ public class ShopInteraction : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             _shopPanel.SetActive(true);
-            //GameManager set playermove to false;
+            GameManager.instance.CanPlay = false;
         }
     }
 

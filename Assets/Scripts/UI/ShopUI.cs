@@ -39,7 +39,6 @@ public class ShopUI : MonoBehaviour
 
     private void GenerateListOfItems(ItemData itemsData, Transform itemsContentTransform)
     {
-        //TODO, ERASE ALL CHILDREN IN STARTING 
         for(int i = 1; i< itemsContentTransform.childCount; i++)
         {
             Destroy(itemsContentTransform.GetChild(i).gameObject);
@@ -60,16 +59,14 @@ public class ShopUI : MonoBehaviour
                 clothesItem.SetItemName(newItem.Name);
                 clothesItem.SetItemPrice(newItem.Price);
                 
-                if(itemsData.GetShopperName()!="")
+                if(!string.IsNullOrEmpty(itemsData.GetShopperName()))
                 {
                     clothesItem.SetBuySellAction(newItem, PurchaseItem);
                 }
                 else
                 {
                     clothesItem.SetBuySellAction(newItem, SellItem);
-                }
-                
-
+                }           
                 itemsContentTransform.GetComponent<RectTransform>().sizeDelta = Vector2.up * (_itemHeight + _spaceBetweenItems) * itemsData.CountItems();
             }
         }
@@ -81,31 +78,26 @@ public class ShopUI : MonoBehaviour
     private void SetClickEvents()
     {
         _closeShopButton.onClick.AddListener(CloseShopPanel);
-        _buyListButton.onClick.AddListener(ShowBuyItemsList);
+        _buyListButton.onClick.AddListener(ShowPurchaseItemsList);
         _sellListButton.onClick.AddListener(ShowSellItemsList);
     }
 
-    private void ShowBuyItemsList()
+    private void ShowPurchaseItemsList()
     {
         _purchaseItemsList.SetActive(true);
-        GenerateListOfItems(_shopItemsData, _purchaseItemsContent);
         _sellItemsList.SetActive(false);
     }
     private void ShowSellItemsList()
     {
-        _purchaseItemsList.SetActive(false);
+        _sellItemsList.SetActive(true);        
         GenerateListOfItems(_playerItemsData, _sellItemsContent);
-        _sellItemsList.SetActive(true);
+        _purchaseItemsList.SetActive(false);
     }  
 
     private void CloseShopPanel()
     {
-        CloseShop();
-    }
-
-    private void CloseShop()
-    {
         _shopUI.SetActive(false);
+        GameManager.instance.CanPlay = true;
     }
 
     private void SellItem(Item itemData)
