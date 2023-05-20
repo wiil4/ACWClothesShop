@@ -32,10 +32,9 @@ public class ClothesItemUI : MonoBehaviour
         _itemPrice.text = price.ToString();
     }
 
-    public void SetBuySellAction(UnityAction action)
+    public void SetBuySellAction(Item item, UnityAction<Item> action)
     {
         _purchaseItemButton.onClick.RemoveAllListeners();
-        _purchaseItemButton.onClick.AddListener(()=> action.Invoke());
+        _purchaseItemButton.onClick.AddListener(()=> action.Invoke(item));
     }
-
 }

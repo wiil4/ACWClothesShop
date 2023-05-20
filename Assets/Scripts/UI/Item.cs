@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class Item
 {
-    [SerializeField] Sprite _image;
-    [SerializeField] string _name;
-    [SerializeField] int _price;
+    public Sprite Image;
+    public string Name;
+    public int Price;
 }

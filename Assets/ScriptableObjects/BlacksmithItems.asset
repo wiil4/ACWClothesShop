@@ -12,22 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 729293bcaa870c442bcca671588ac1a8, type: 3}
   m_Name: BlacksmithItems
   m_EditorClassIdentifier: 
+  _shopperName: BlackSmith
   _itemsInventory:
-  - _image: {fileID: 21300000, guid: 135c2949b11b94a4baa83d246fae1d3e, type: 3}
-    _name: Leather Armor
-    _price: 250
-  - _image: {fileID: 21300000, guid: 3074c1d497f12ed4c8e37c9d4c972298, type: 3}
-    _name: Special Forged Armor
-    _price: 500
-  - _image: {fileID: 21300000, guid: 1112181d6eae1b147b1d8526184fa38f, type: 3}
-    _name: Leather Helmet
-    _price: 150
-  - _image: {fileID: 21300000, guid: 951b1241dd3950e4f96e468e839b7bb8, type: 3}
-    _name: Special Helmet
-    _price: 350
-  - _image: {fileID: 21300000, guid: 7a91a563959c58049b4294e9d1088840, type: 3}
-    _name: Common Boots
-    _price: 100
-  - _image: {fileID: 21300000, guid: 29342a1ae4ef6854caa8f5f10c936ebb, type: 3}
-    _name: Traveler's Boots
-    _price: 0
+  - Image: {fileID: 21300000, guid: 1112181d6eae1b147b1d8526184fa38f, type: 3}
+    Name: Leather Helmet
+    Price: 100
+  - Image: {fileID: 21300000, guid: 951b1241dd3950e4f96e468e839b7bb8, type: 3}
+    Name: Special Helmet
+    Price: 320
+  - Image: {fileID: 21300000, guid: 135c2949b11b94a4baa83d246fae1d3e, type: 3}
+    Name: Leather Armor
+    Price: 150
+  - Image: {fileID: 21300000, guid: 3074c1d497f12ed4c8e37c9d4c972298, type: 3}
+    Name: Special Armor
+    Price: 380
+  - Image: {fileID: 21300000, guid: 2ae6037b606a138438c09173ddda3edc, type: 3}
+    Name: Traveler Boots
+    Price: 70
+  - Image: {fileID: 21300000, guid: c2f96cde325a6604da92b182e8716595, type: 3}
+    Name: Special Boots
+    Price: 240
