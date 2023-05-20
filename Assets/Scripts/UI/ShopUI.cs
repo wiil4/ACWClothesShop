@@ -37,43 +37,17 @@ public class ShopUI : MonoBehaviour
         SetClickEvents();
     }
 
-    /*private void GenerateBuyItems()
-    {
-        if(_shopItemsData.CountItems()>0)
-        {
-            _itemHeight = _purchaseItemsContent.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
-            _purchaseItemsContent.GetChild(0).gameObject.SetActive(false);
-            _purchaseItemsContent.DetachChildren();
-
-            for (int i = 0; i < _shopItemsData.CountItems(); i++)
-            {
-                Item newItem = _shopItemsData.GetItem(i);
-                ClothesItemUI clothesItem = Instantiate(_shopItemPrefab, _purchaseItemsContent).GetComponent<ClothesItemUI>();
-
-                clothesItem.SetItemPosition(Vector2.down * i * (_itemHeight + _spaceBetweenItems));
-
-                clothesItem.SetItemImage(newItem.Image);
-                clothesItem.SetItemName(newItem.Name);
-                clothesItem.SetItemPrice(newItem.Price);
-
-                clothesItem.SetBuySellAction(newItem, PurchaseItem);
-
-                _purchaseItemsContent.GetComponent<RectTransform>().sizeDelta = Vector2.up * (_itemHeight + _spaceBetweenItems) * _shopItemsData.CountItems();
-            }
-        }
-        else
-        {
-            _purchaseItemsContent.GetChild(0).gameObject.SetActive(true);
-        }
-    }*/
-
     private void GenerateListOfItems(ItemData itemsData, Transform itemsContentTransform)
     {
+        //TODO, ERASE ALL CHILDREN IN STARTING 
+        for(int i = 1; i< itemsContentTransform.childCount; i++)
+        {
+            Destroy(itemsContentTransform.GetChild(i).gameObject);
+        }
         if (itemsData.CountItems() > 0)
         {
             _itemHeight = itemsContentTransform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
             itemsContentTransform.GetChild(0).gameObject.SetActive(false);
-            itemsContentTransform.DetachChildren();
 
             for (int i = 0; i < itemsData.CountItems(); i++)
             {
@@ -86,7 +60,7 @@ public class ShopUI : MonoBehaviour
                 clothesItem.SetItemName(newItem.Name);
                 clothesItem.SetItemPrice(newItem.Price);
                 
-                if(itemsData.GetShopperName()!=null)
+                if(itemsData.GetShopperName()!="")
                 {
                     clothesItem.SetBuySellAction(newItem, PurchaseItem);
                 }
@@ -137,6 +111,7 @@ public class ShopUI : MonoBehaviour
     private void SellItem(Item itemData)
     {
         _playerItemsData.RemoveItem(itemData);
+        GenerateListOfItems(_playerItemsData, _sellItemsContent);
     }
     private void PurchaseItem(Item itemData)
     {
