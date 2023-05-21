@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.M))
+        if(Input.GetKeyDown(KeyCode.I))
         {
             CanPlay = !CanPlay;
             _playerItemsUI.gameObject.SetActive(!CanPlay);

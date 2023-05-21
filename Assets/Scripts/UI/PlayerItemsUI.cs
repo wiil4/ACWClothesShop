@@ -15,6 +15,8 @@ public class PlayerItemsUI : MonoBehaviour
 
     [SerializeField] ItemData _playerItemsData;
 
+    [Header("UI Coins")]
+    [SerializeField] GameObject _coinsHandlerUI;
 
     void Start()
     {
@@ -63,14 +65,25 @@ public class PlayerItemsUI : MonoBehaviour
         Debug.Log("setPlayerItem" + item.Image.name);
     }
 
-    private void CloseItemsPanel()
+    public void CloseItemsPanel()
     {
         gameObject.SetActive(false);
+        _coinsHandlerUI.SetActive(false);
         GameManager.instance.CanPlay = true;
     }
 
     public int CountPlayerItems()
     {
         return _playerItemsData.CountItems();
+    }
+
+    private void OnEnable()
+    {
+        _coinsHandlerUI.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        _coinsHandlerUI.SetActive(false);
     }
 }

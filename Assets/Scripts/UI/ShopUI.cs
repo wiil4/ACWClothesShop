@@ -28,6 +28,9 @@ public class ShopUI : MonoBehaviour
     [SerializeField] GameObject _sellItemsList;
     [SerializeField] Transform _sellItemsContent;
 
+    [Header("UI Coins")]
+    [SerializeField] GameObject _coinsHandlerUI;
+
     void Start()
     {             
         SetClickEvents();
@@ -92,9 +95,10 @@ public class ShopUI : MonoBehaviour
         _purchaseItemsList.SetActive(false);
     }  
 
-    private void CloseShopPanel()
+    public void CloseShopPanel()
     {
         gameObject.SetActive(false);
+        _coinsHandlerUI.SetActive(false);
         GameManager.instance.CanPlay = true;
     }
 
@@ -110,7 +114,16 @@ public class ShopUI : MonoBehaviour
         {
             _playerItemsData.AddItem(itemData);
             GameManager.instance.PurchaseItem(itemData.Price);
-        }
-        
+        }        
+    }
+
+    private void OnEnable()
+    {
+        _coinsHandlerUI.SetActive(true);
+    }
+
+    private void OnDisable()
+    {
+        _coinsHandlerUI.SetActive(false);
     }
 }
