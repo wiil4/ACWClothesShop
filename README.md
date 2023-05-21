@@ -1,15 +1,17 @@
-# 2D CLOTHES SYSTEM
+# 2D CLOTHES SHOP SYSTEM
 
 This is the repository for the Clothes System project.
 
 ## Requirements
 
 - Unity 2021.3.2f1
-- Cinemachine
+- Cinemachine 2.8.9
 
 ## Description
 
-Player is working with keyboard and it's for windows. It has a player inventory which can be opened with I key. I can interact with the blacksmith (as this is the unique NPC in this example world) pressing E key if they are closer.
+Project currently works with OldInputSystem. Player moves with keyboard and it can be tested on windows.
+- It has a player inventory which can be opened pressing I key.
+- I can interact with the blacksmith (as this is the unique NPC in this example world) pressing E key if they are closer.
 
 ## Installation
 
