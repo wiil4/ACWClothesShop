@@ -17,18 +17,30 @@ MonoBehaviour:
   - Image: {fileID: 21300000, guid: 1112181d6eae1b147b1d8526184fa38f, type: 3}
     Name: Leather Helmet
     Price: 100
+    BodyPartIdentifier: 0
+    ItemClassIdentifier: 0
   - Image: {fileID: 21300000, guid: 951b1241dd3950e4f96e468e839b7bb8, type: 3}
     Name: Special Helmet
     Price: 320
+    BodyPartIdentifier: 0
+    ItemClassIdentifier: 1
   - Image: {fileID: 21300000, guid: 135c2949b11b94a4baa83d246fae1d3e, type: 3}
     Name: Leather Armor
     Price: 150
+    BodyPartIdentifier: 1
+    ItemClassIdentifier: 0
   - Image: {fileID: 21300000, guid: 3074c1d497f12ed4c8e37c9d4c972298, type: 3}
     Name: Special Armor
     Price: 380
+    BodyPartIdentifier: 1
+    ItemClassIdentifier: 1
   - Image: {fileID: 21300000, guid: 2ae6037b606a138438c09173ddda3edc, type: 3}
-    Name: Traveler Boots
+    Name: Leather Boots
     Price: 70
+    BodyPartIdentifier: 2
+    ItemClassIdentifier: 0
   - Image: {fileID: 21300000, guid: c2f96cde325a6604da92b182e8716595, type: 3}
     Name: Special Boots
     Price: 240
+    BodyPartIdentifier: 2
+    ItemClassIdentifier: 1

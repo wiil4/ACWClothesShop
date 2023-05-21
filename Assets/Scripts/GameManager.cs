@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     int _currentPlayerItems;
     bool _canBuy;
 
+    [Header("Player Clothes")]
+    [SerializeField] ClothesManager _clothesManager;
+
 
     private void Awake()
     {
@@ -89,5 +92,10 @@ public class GameManager : MonoBehaviour
             _canBuy = false;
 
         return _canBuy;
+    }
+
+    public void ChangeClothes(BodyPart bodyidentifier, ItemClass itemType)
+    {
+        _clothesManager.SetClothes(bodyidentifier, itemType);
     }
 }

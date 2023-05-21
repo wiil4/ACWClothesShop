@@ -16,7 +16,6 @@ public class ItemData : ScriptableObject
     {
         return _itemsInventory.Count;
     }
-
     public void AddItem(Item newItem)
     {
         _itemsInventory.Add(newItem);
@@ -25,7 +24,6 @@ public class ItemData : ScriptableObject
     {
         _itemsInventory.Remove(item);
     }
-
     public Item GetItem(int index)
     {
         return _itemsInventory[index];

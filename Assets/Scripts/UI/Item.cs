@@ -8,4 +8,6 @@ public class Item
     public Sprite Image;
     public string Name;
     public int Price;
+    public BodyPart BodyPartIdentifier;
+    public ItemClass ItemClassIdentifier;
 }

@@ -48,7 +48,7 @@ public class PlayerItemsUI : MonoBehaviour
             PlayerClothesItemUI playerItem = Instantiate(_playerItemPrefab, _playerItemsGroup.transform).GetComponent<PlayerClothesItemUI>();
 
             playerItem.SetItemImage(newItem.Image);
-            playerItem.ChangeItem(newItem, ChangeItem);
+            playerItem.ChangeItem(newItem, ChangeClothes);
         }
     }
 
@@ -60,9 +60,9 @@ public class PlayerItemsUI : MonoBehaviour
         }
     }
 
-    private void ChangeItem(Item item)
+    private void ChangeClothes(Item item)
     {
-        Debug.Log("setPlayerItem" + item.Image.name);
+        GameManager.instance.ChangeClothes(item.BodyPartIdentifier, item.ItemClassIdentifier);
     }
 
     public void CloseItemsPanel()

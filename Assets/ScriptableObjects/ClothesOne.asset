@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: ClothesOne
   m_EditorClassIdentifier: 
   _clothesUp:
-    Hat: {fileID: 0}
-    Body: {fileID: 0}
-    RightBoot: {fileID: 0}
-    LeftBoot: {fileID: 0}
+    Hat: {fileID: 21300000, guid: 5befed06dc7424b49bfcaf080c2bd313, type: 3}
+    Body: {fileID: 21300000, guid: 95a69eecf1fe8a84bad9043b6633ddbc, type: 3}
+    RightBoot: {fileID: 21300000, guid: 60eb91d2fd8b0674a836afa56bf5bda4, type: 3}
+    LeftBoot: {fileID: 21300000, guid: d7717b5eb46f1f94d85cf3c8d62db702, type: 3}
   _clothesDown:
-    Hat: {fileID: 0}
-    Body: {fileID: 0}
-    RightBoot: {fileID: 0}
-    LeftBoot: {fileID: 0}
+    Hat: {fileID: 21300000, guid: 1112181d6eae1b147b1d8526184fa38f, type: 3}
+    Body: {fileID: 21300000, guid: 135c2949b11b94a4baa83d246fae1d3e, type: 3}
+    RightBoot: {fileID: 21300000, guid: 2ae6037b606a138438c09173ddda3edc, type: 3}
+    LeftBoot: {fileID: 21300000, guid: aff8d0b06918a5348ab04d678a11d049, type: 3}
   _clothesLeft:
-    Hat: {fileID: 0}
-    Body: {fileID: 0}
-    RightBoot: {fileID: 0}
-    LeftBoot: {fileID: 0}
+    Hat: {fileID: 21300000, guid: 5ebab1be2f972724eb13f6258b1b2db1, type: 3}
+    Body: {fileID: 21300000, guid: 1336a4a99654c02499b2e65c1bd2ccc6, type: 3}
+    RightBoot: {fileID: 21300000, guid: f3587e6f43aa4ab4ebfdfa7b0d321a4a, type: 3}
+    LeftBoot: {fileID: 21300000, guid: 7a91a563959c58049b4294e9d1088840, type: 3}
   _clothesRight:
-    Hat: {fileID: 0}
-    Body: {fileID: 0}
-    RightBoot: {fileID: 0}
-    LeftBoot: {fileID: 0}
+    Hat: {fileID: 21300000, guid: fd0e240a0abfac74b90c2e9b9d50ae50, type: 3}
+    Body: {fileID: 21300000, guid: 27e8c49e6a4ccef4aa8c275ab9bdb821, type: 3}
+    RightBoot: {fileID: 21300000, guid: 93af6ffc9d5c9d24d928fcd3c0dd366d, type: 3}
+    LeftBoot: {fileID: 21300000, guid: 6e729ca81041e88409171ad8fa582235, type: 3}

@@ -26,12 +26,20 @@ public class ClothesData : ScriptableObject
             _clothesRight.Hat
         };
     }
-    public List<Sprite> GetBoots()
+    public List<Sprite> GetLeftBoots()
     {
-        return new List<Sprite> { _clothesUp.LeftBoot, _clothesUp.RightBoot,
-            _clothesDown.LeftBoot, _clothesDown.RightBoot,
-            _clothesLeft.LeftBoot, _clothesLeft.RightBoot,
-            _clothesRight.LeftBoot, _clothesRight.RightBoot
+        return new List<Sprite> { _clothesUp.LeftBoot,
+            _clothesDown.LeftBoot,
+            _clothesLeft.LeftBoot,
+            _clothesRight.LeftBoot,
+        };
+    }
+    public List<Sprite> GetRightBoots()
+    {
+        return new List<Sprite> { _clothesUp.RightBoot,
+            _clothesDown.RightBoot,
+            _clothesLeft.RightBoot,
+            _clothesRight.RightBoot
         };
     }
 }
