@@ -1,6 +1,8 @@
 # 2D CLOTHES SHOP SYSTEM
 
 This is the repository for a Clothes Shop System feature project.
+- Game can be tested downloading 'WindowsBuild'
+. Required documentation is at ShopSystemExplanation
 
 ## Requirements
 
