@@ -7,8 +7,12 @@ public class ShopInteraction : MonoBehaviour
 {
     bool _playerDetected;
 
+    [Header("Dialog Canvas")]
+    [SerializeField] GameObject _pop;
+
     [Header("Character Shop Panel")]
     [SerializeField] ShopUI _shopPanel;
+
     
     void Start()
     {
@@ -22,6 +26,7 @@ public class ShopInteraction : MonoBehaviour
         {
             ShowDialogButton();
         }
+        _pop.SetActive(_playerDetected);
     }
 
     private void ShowDialogButton()
