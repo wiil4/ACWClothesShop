@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] ShopUI _shopItemsUI;
     [SerializeField] CoinsHandlerUI _coinsHandlerUI;
 
+    [Header("Audio Reference")]
+    [SerializeField] AudioManager _audioManager;
+
     [Header("Coins")]
     [SerializeField] int _maxCoins = 100000;
     int _currentCoins;
@@ -51,10 +54,15 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
-        {
-            CanPlay = !CanPlay;
-            _playerItemsUI.gameObject.SetActive(!CanPlay);
-            _playerItemsUI.FillGrid();
+        {        
+            if(!_playerItemsUI.gameObject.activeSelf)
+            {
+                _shopItemsUI.CloseShop();
+                _playerItemsUI.OpenItemsPanel();
+                _playerItemsUI.FillGrid();
+                return;
+            }
+            _playerItemsUI.CloseItemsPanel();            
         }
     }
 
@@ -92,5 +100,16 @@ public class GameManager : MonoBehaviour
     public void ChangeClothes(BodyPart bodyidentifier, ItemClass itemType)
     {
         _clothesManager.SetClothes(bodyidentifier, itemType);
+    }
+
+    public void OpenShop()
+    {
+        _playerItemsUI.CloseItemsPanel();
+        _shopItemsUI.OpenShop();        
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+
     }
 }

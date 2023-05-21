@@ -77,7 +77,7 @@ public class ShopUI : MonoBehaviour
     }
     private void SetClickEvents()
     {
-        _closeShopButton.onClick.AddListener(CloseShopPanel);
+        _closeShopButton.onClick.AddListener(CloseShop);
         _buyListButton.onClick.AddListener(ShowPurchaseItemsList);
         _sellListButton.onClick.AddListener(ShowSellItemsList);
     }
@@ -95,7 +95,14 @@ public class ShopUI : MonoBehaviour
         _purchaseItemsList.SetActive(false);
     }  
 
-    public void CloseShopPanel()
+    public void OpenShop()
+    {
+        gameObject.SetActive(true);
+        _coinsHandlerUI.SetActive(true);
+        ShowPurchaseItemsList();
+        GameManager.instance.CanPlay = false;
+    }
+    public void CloseShop()
     {
         gameObject.SetActive(false);
         _coinsHandlerUI.SetActive(false);

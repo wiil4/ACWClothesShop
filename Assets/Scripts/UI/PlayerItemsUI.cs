@@ -65,6 +65,12 @@ public class PlayerItemsUI : MonoBehaviour
         GameManager.instance.ChangeClothes(item.BodyPartIdentifier, item.ItemClassIdentifier);
     }
 
+    public void OpenItemsPanel()
+    {
+        gameObject.SetActive(true);
+        _coinsHandlerUI.SetActive(true);
+        GameManager.instance.CanPlay = false;
+    }
     public void CloseItemsPanel()
     {
         gameObject.SetActive(false);

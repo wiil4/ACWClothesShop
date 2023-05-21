@@ -9,10 +9,6 @@ public class ShopInteraction : MonoBehaviour
 
     [Header("Dialog Canvas")]
     [SerializeField] GameObject _pop;
-
-    [Header("Character Shop Panel")]
-    [SerializeField] ShopUI _shopPanel;
-
     
     void Start()
     {
@@ -33,9 +29,7 @@ public class ShopInteraction : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            _shopPanel.gameObject.SetActive(true);
-            _shopPanel.ShowPurchaseItemsList();
-            GameManager.instance.CanPlay = false;
+            GameManager.instance.OpenShop();
         }
     }
 
