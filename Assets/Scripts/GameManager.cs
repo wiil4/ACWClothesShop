@@ -48,11 +48,6 @@ public class GameManager : MonoBehaviour
         _shopItemsUI.gameObject.SetActive(false);
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.I))
