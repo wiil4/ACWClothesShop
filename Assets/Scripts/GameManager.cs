@@ -108,8 +108,8 @@ public class GameManager : MonoBehaviour
         _shopItemsUI.OpenShop();        
     }
 
-    public void PlaySound(AudioClip clip)
+    public void PlaySoundClip(AudioClip clip)
     {
-
+        _audioManager.PlaySound(clip);
     }
 }

@@ -9,7 +9,8 @@ This is the repository for the Clothes System project.
 
 ## Description
 
-Project currently works with OldInputSystem. Player moves with keyboard and it can be tested on windows.
+- Art, Sound and Music assets were obtained from different asset creators on different stores like Itch.io, Unity Asset Store, Craftpix
+- Project currently works with OldInputSystem. Player moves with keyboard and it can be tested on windows
 - It has a player inventory which can be opened pressing I key.
 - I can interact with the blacksmith (as this is the unique NPC in this example world) pressing E key if they are closer.
 

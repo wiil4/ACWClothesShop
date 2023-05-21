@@ -9,6 +9,7 @@ public class ShopInteraction : MonoBehaviour
 
     [Header("Dialog Canvas")]
     [SerializeField] GameObject _pop;
+    [SerializeField] AudioClip[] _clips;
     
     void Start()
     {
@@ -30,6 +31,7 @@ public class ShopInteraction : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.E))
         {
             GameManager.instance.OpenShop();
+            GameManager.instance.PlaySoundClip(_clips[1]);
         }
     }
 
@@ -38,6 +40,7 @@ public class ShopInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _playerDetected = true;
+            GameManager.instance.PlaySoundClip(_clips[0]);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

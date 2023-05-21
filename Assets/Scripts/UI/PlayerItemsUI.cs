@@ -18,6 +18,9 @@ public class PlayerItemsUI : MonoBehaviour
     [Header("UI Coins")]
     [SerializeField] GameObject _coinsHandlerUI;
 
+    [Header("Audio Clips")]
+    [SerializeField] AudioClip _changeClothesClip;
+
     void Start()
     {
         FillGrid();
@@ -62,6 +65,7 @@ public class PlayerItemsUI : MonoBehaviour
 
     private void ChangeClothes(Item item)
     {
+        GameManager.instance.PlaySoundClip(_changeClothesClip);
         GameManager.instance.ChangeClothes(item.BodyPartIdentifier, item.ItemClassIdentifier);
     }
 

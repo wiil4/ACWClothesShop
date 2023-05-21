@@ -31,6 +31,9 @@ public class ShopUI : MonoBehaviour
     [Header("UI Coins")]
     [SerializeField] GameObject _coinsHandlerUI;
 
+    [Header("Audio Clips")]
+    [SerializeField] AudioClip _coinsClip;
+
     void Start()
     {             
         SetClickEvents();
@@ -113,6 +116,7 @@ public class ShopUI : MonoBehaviour
     {
         _playerItemsData.RemoveItem(itemData);
         GameManager.instance.SellItem(itemData.Price);
+        GameManager.instance.PlaySoundClip(_coinsClip);
         GenerateListOfItems(_playerItemsData, _sellItemsContent);
     }
     private void PurchaseItem(Item itemData)
@@ -120,6 +124,7 @@ public class ShopUI : MonoBehaviour
         if(GameManager.instance.CheckCanBuyItems(itemData.Price))
         {
             _playerItemsData.AddItem(itemData);
+            GameManager.instance.PlaySoundClip(_coinsClip);
             GameManager.instance.PurchaseItem(itemData.Price);
         }        
     }
