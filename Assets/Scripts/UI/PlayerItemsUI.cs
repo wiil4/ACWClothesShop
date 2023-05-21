@@ -20,6 +20,7 @@ public class PlayerItemsUI : MonoBehaviour
 
     [Header("Audio Clips")]
     [SerializeField] AudioClip _changeClothesClip;
+    [SerializeField] AudioClip _buttonClip;
 
     void Start()
     {
@@ -73,12 +74,14 @@ public class PlayerItemsUI : MonoBehaviour
     {
         gameObject.SetActive(true);
         _coinsHandlerUI.SetActive(true);
+        GameManager.instance.PlaySoundClip(_buttonClip);
         GameManager.instance.CanPlay = false;
     }
     public void CloseItemsPanel()
     {
         gameObject.SetActive(false);
         _coinsHandlerUI.SetActive(false);
+        GameManager.instance.PlaySoundClip(_buttonClip);
         GameManager.instance.CanPlay = true;
     }
 

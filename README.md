@@ -1,6 +1,6 @@
 # 2D CLOTHES SHOP SYSTEM
 
-This is the repository for the Clothes System project.
+This is the repository for a Clothes Shop System feature project.
 
 ## Requirements
 

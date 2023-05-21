@@ -19,6 +19,8 @@ public class ShopInteraction : MonoBehaviour
     
     void Update()
     {
+        if (!GameManager.instance.CanPlay)
+            return;
         if(_playerDetected)
         {
             ShowDialogButton();

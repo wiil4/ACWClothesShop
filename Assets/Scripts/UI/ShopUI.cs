@@ -33,6 +33,7 @@ public class ShopUI : MonoBehaviour
 
     [Header("Audio Clips")]
     [SerializeField] AudioClip _coinsClip;
+    [SerializeField] AudioClip _buttonClip;
 
     void Start()
     {             
@@ -88,12 +89,14 @@ public class ShopUI : MonoBehaviour
     public void ShowPurchaseItemsList()
     {
         _purchaseItemsList.SetActive(true);
+        GameManager.instance.PlaySoundClip(_buttonClip);
         GenerateListOfItems(_shopItemsData, _purchaseItemsContent);
         _sellItemsList.SetActive(false);
     }
     private void ShowSellItemsList()
     {
-        _sellItemsList.SetActive(true);        
+        _sellItemsList.SetActive(true);
+        GameManager.instance.PlaySoundClip(_buttonClip);
         GenerateListOfItems(_playerItemsData, _sellItemsContent);
         _purchaseItemsList.SetActive(false);
     }  
@@ -109,6 +112,7 @@ public class ShopUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         _coinsHandlerUI.SetActive(false);
+        GameManager.instance.PlaySoundClip(_buttonClip);
         GameManager.instance.CanPlay = true;
     }
 

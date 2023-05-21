@@ -57,7 +57,10 @@ public class GameManager : MonoBehaviour
         {        
             if(!_playerItemsUI.gameObject.activeSelf)
             {
-                _shopItemsUI.CloseShop();
+                if(_shopItemsUI.gameObject.activeSelf)
+                {
+                    _shopItemsUI.CloseShop();
+                }                
                 _playerItemsUI.OpenItemsPanel();
                 _playerItemsUI.FillGrid();
                 return;
@@ -104,7 +107,10 @@ public class GameManager : MonoBehaviour
 
     public void OpenShop()
     {
-        _playerItemsUI.CloseItemsPanel();
+        if (_playerItemsUI.gameObject.activeSelf)
+        {
+            _playerItemsUI.CloseItemsPanel();
+        }                
         _shopItemsUI.OpenShop();        
     }
 
